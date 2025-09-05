@@ -1,0 +1,26 @@
+name: haca3_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - ffmpeg=4.0.2
+  - x264==1!152.20180717
+  - nibabel
+  - numpy
+  - matplotlib
+  - ants
+  - pip=21.2.2
+  - pip:
+    - ffmpeg-python==0.2.0
+    - munch==2.5.0
+    - opencv-python-headless
+    - pillow
+    - scikit-image
+    - scipy
+    - torch
+    - torchvision
+    - tqdm
+    - hd-bet==1.1
+
+

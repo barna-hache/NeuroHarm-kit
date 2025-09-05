@@ -38,8 +38,8 @@ To use the following commands, please navigate to the project folder : `cd path/
 path/to/nifti_image_to_harmonize.nii.gz \
 path/to/output_folder
 ```
-Options:  
-`--apply_preproc_steps` [True/False]: If you already applied the preprocessed stpes to the image, skip the preprocessing pipeline applied by the toolkit by turning this option to False. Default is True.  
+Options:\
+`--apply_preproc_steps` [True/False]: If you already applied the preprocessed stpes to the image, skip the preprocessing pipeline applied by the toolkit by turning this option to False. Default is True.\
 `--save_preprocess` [True/False]: If you want to save the preprocessed image before harmonization to a folder “preprocessed” in your outpu folder created by the toolbox. Default is True.
 
 ### HACA3 example command:
@@ -48,9 +48,9 @@ Options:
 path/to/nifti_image_to_harmonize.nii.gz \
 path/to/output_folder
 ```
-Options:  
-`--apply_preproc_steps` [True/False]  
-`--save_preprocess` [True/False]  
+Options:\
+`--apply_preproc_steps` [True/False]\
+`--save_preprocess` [True/False]\
 `--theta [float] –-theta [float]` : Choose the target contrast. Default is 10.0 20.0
 
 ### MURD example command:
@@ -59,8 +59,8 @@ Options:
 path/to/nifti_image_to_harmonize.nii.gz \
 path/to/output_folder
 ```
-Options:  
-`--apply_preproc_steps` [True/False]  
+Options:\
+`--apply_preproc_steps` [True/False]\
 `--n_axial_slices` [int] : As MURD harmonize slice by slice you can choose the number of central axial slice you want. Default is 200 to harmonize all the brain.
 
 Note : There is no --apply_preproc_steps (always True) option available because MURD works with png images.
@@ -71,8 +71,8 @@ Note : There is no --apply_preproc_steps (always True) option available because 
 path/to/nifti_image_to_harmonize.nii.gz \
 path/to/output_folder
 ```
-Options:  
-`--apply_preproc_steps` [True/False]  
+Options:\
+`--apply_preproc_steps` [True/False]\
 `--save_preprocess` [True/False]
 
 ### DISARM++ example command:
@@ -81,6 +81,6 @@ Options:
 path/to/nifti_image_to_harmonize.nii.gz \
 path/to/output_folder
 ```
-Options:  
-`--apply_preproc_steps` [True/False]  
+Options:\
+`--apply_preproc_steps` [True/False]\
 `--save_preprocess` [True/False]

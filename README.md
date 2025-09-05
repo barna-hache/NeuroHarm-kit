@@ -11,7 +11,7 @@ We developed an open‑source Python toolbox that unifies the end‑to‑end exe
  - DISARM++: Beyond scanner-free harmonization (https://doi.org/10.48550/arXiv.2505.03715)
 
 #
-Important : The code associated with this GitHub does not contain all the files needed to run NeuroHarm-Kit because they are too large to be hosted on GitHub. To get the complete project, you must download it from the drive: Link to the drive
+Important : The code associated with this GitHub does not contain all the files needed to run NeuroHarm-Kit because they are too large to be hosted on GitHub (wieghts, mni templates, ...). To get the complete project, you must download it from the drive: Link to the drive
 #
 
 ## 1. Prerequisites

@@ -25,7 +25,7 @@ Note : All the preprocessing pipelines are already implemented according to each
 ## 2. Installation
 
 To intall the toolbox on your device, check the following steps:
- - Download the project at following link : google drive link
+ - Download the project at following link : [google drive link](https://drive.google.com/file/d/1fKH2r_pK0_HYTNvLT56HC7IB2IakjiiK/view?usp=sharing)
  - Unzip the project in the folder of your choice
  - In the bash terminal, navigate to the project folder: `cd path/to/the/project/folder`
  - With docker, build the docker image : `docker build -t neuroharmo_kit .`
@@ -35,16 +35,6 @@ Note : The unzipped project is 9 GiB (6.8 when zipped) but the built docker imag
 ## 3. Usage
 
 To use the following commands, please navigate to the project folder : `cd path/to/the/project/folder`
-
-### STGAN example command:
-```
-./neuroharmo_toolkit.sh stgan \
-path/to/nifti_image_to_harmonize.nii.gz \
-path/to/output_folder
-```
-Options:\
-`--apply_preproc_steps` [True/False]: If you already applied the preprocessed stpes to the image, skip the preprocessing pipeline applied by the toolkit by turning this option to False. Default is True.\
-`--save_preprocess` [True/False]: If you want to save the preprocessed image before harmonization to a folder “preprocessed” in your outpu folder created by the toolbox. Default is True.
 
 ### HACA3 example command:
 ```
@@ -57,17 +47,6 @@ Options:\
 `--save_preprocess` [True/False]\
 `--theta [float] –-theta [float]` : Choose the target contrast. Default is 10.0 20.0
 
-### MURD example command:
-```
-./neuroharmo_toolkit.sh murd \
-path/to/nifti_image_to_harmonize.nii.gz \
-path/to/output_folder
-```
-Options:\
-`--apply_preproc_steps` [True/False]\
-`--n_axial_slices` [int] : As MURD harmonize slice by slice you can choose the number of central axial slice you want. Default is 200 to harmonize all the brain.
-
-Note : There is no --apply_preproc_steps (always True) option available because MURD works with png images.
 
 ### IGUANe example command:
 ```
@@ -88,3 +67,25 @@ path/to/output_folder
 Options:\
 `--apply_preproc_steps` [True/False]\
 `--save_preprocess` [True/False]
+
+### STGAN example command:
+```
+./neuroharmo_toolkit.sh stgan \
+path/to/nifti_image_to_harmonize.nii.gz \
+path/to/output_folder
+```
+Options:\
+`--apply_preproc_steps` [True/False]: If you already applied the preprocessed stpes to the image, skip the preprocessing pipeline applied by the toolkit by turning this option to False. Default is True.\
+`--save_preprocess` [True/False]: If you want to save the preprocessed image before harmonization to a folder “preprocessed” in your outpu folder created by the toolbox. Default is True.
+
+### MURD example command:
+```
+./neuroharmo_toolkit.sh murd \
+path/to/nifti_image_to_harmonize.nii.gz \
+path/to/output_folder
+```
+Options:\
+`--apply_preproc_steps` [True/False]\
+`--n_axial_slices` [int] : As MURD harmonize slice by slice you can choose the number of central axial slice you want. Default is 200 to harmonize all the brain.
+
+Note : There is no --apply_preproc_steps (always True) option available because MURD works with png images.

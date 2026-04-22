@@ -89,3 +89,65 @@ Options:\
 `--n_axial_slices` [int] : As MURD harmonize slice by slice you can choose the number of central axial slice you want. Default is 200 to harmonize all the brain.
 
 Note : There is no --apply_preproc_steps (always True) option available because MURD works with png images.
+
+## Reproducibility Details
+### Pretrained Weights Provenance
+
+The pretrained weights used in this work originate from the following publicly available sources:
+
+| Method   | Source | Download date |
+|----------|--------|---------------|
+| STGAN    | https://www.dropbox.com/sh/d60gvw7h21748d2/AADCVfKjCOONG2AodL7Lv5Bca?dl=0 | 20/05/2025 |
+| HACA3    | https://iacl.ece.jhu.edu/~lianrui/haca3/haca3_v1.0.9.sif | 19/05/2025 |
+| MURD     | https://zenodo.org/records/8115979 | 12/06/2025 |
+| IGUANE   | https://github.com/RocaVincent/iguane_harmonization/tree/master/harmonization | 07/07/2025 |
+| DISARM++ | https://polimi365-my.sharepoint.com/:f:/g/personal/10628828_polimi_it/EieNX6hz4H9Pvpe02QPO-A8BXmmwbZBpAtedJBK8BKXPFw | 20/05/2025 |
+
+---
+
+### Input Requirements
+
+The toolbox accepts only 3D T1-weighted MRI volumes as input.
+
+No specific constraints are imposed on image size, skull coverage, or intensity scaling. The preprocessing pipeline systematically adapts the input to the spatial and numerical conditions required for harmonization.
+
+---
+
+### Execution Environment
+
+All experiments were conducted in a containerized environment with the following specifications:
+
+- **Operating system**: Ubuntu 20.04.6 LTS (focal)
+- **GPU**: NVIDIA Quadro RTX 6000
+- **CUDA version**: 12.4
+
+
+- **Git commit**: 521447588aec946aec66f1df2be8a7b448a1d4ac  
+- **Branch**: main  
+- **Docker**: 27.5.1 (build 9f9e405)  
+- **FSL / FLIRT**: 6.0  
+- **FSL**: 5.0.9  
+- **HD-BET**: 1.1  
+- **ANTs**: 0.4.2  
+
+---
+
+### Hardware Requirements and Runtime
+
+| Method   | GPU runtime | CPU runtime | Max CPU RAM | GPU peak memory | GPU requirement |
+|----------|------------|-------------|-------------|-----------------|-----------------|
+| STGAN    | 18 min 26 s | 23 min 42 s | 27.17 GiB   | —               | GPU or CPU      |
+| IGUANE   | 5 min 20 s  | 8 min 36 s  | 2.78 GiB    | —               | GPU or CPU      |
+| MURD     | 8 min 14 s  | 9 min 13 s  | 2.24 GiB    | —               | GPU or CPU      |
+| HACA3    | 3 min 20 s  | —           | 2.39 GiB    | 6.40 GiB        | GPU only        |
+| DISARM++ | 13 min 31 s | —           | 2.22 GiB    | 2.29 GiB        | GPU only        |
+
+---
+
+### Failure Cases and Execution Completeness
+
+The primary failure mode observed was **out-of-memory (OOM)**, occurring when available computational resources (CPU or GPU) were insufficient for processing a given volume.
+
+Apart from such resource limitations, the pipeline demonstrated stable behavior.
+
+Importantly, using the proposed toolbox, all SRPBS volumes were successfully processed by all harmonization methods, with no method-specific failures under adequate hardware conditions.
